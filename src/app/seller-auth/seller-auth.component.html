@@ -1,0 +1,26 @@
+<div class="seller-auth">
+  <!-- Signup Page -->
+  <div *ngIf="!wantToLogin" class="main-form">
+    <h2>Seller Sign-up</h2>
+    <p class="success-message">{{accountCreationMessage}}</p>
+    <form class="common-form" #sellerForm="ngForm" (ngSubmit)="signUp(sellerForm.value)">
+      <input type="text" placeholder="Enter Your Name" name="name" ngModel required>
+      <input type="email" placeholder="Enter Your E-mail" name="email" ngModel required>
+      <input type="password" placeholder="Enter Password" name="password" ngModel required minlength="4">
+      <button type="submit" [ngClass]="{'disabled': sellerForm.invalid}">Sing Up</button>
+    </form>
+    <a (click)="changeAuthStratigy()">Have an Account ? - Click Here</a>
+  </div>
+
+  <!-- Login Page -->
+  <div *ngIf="wantToLogin" class="main-form">
+    <h2>Seller Login</h2>
+    <p class="error-message">{{loginErrorMessage}}</p>
+    <form class="common-form" #sellerForm="ngForm" (ngSubmit)="login(sellerForm.value)">
+      <input type="email" placeholder="Enter Your E-mail" name="email" ngModel required>
+      <input type="password" placeholder="Enter Password" name="password" ngModel required minlength="4">
+      <button type="submit" [ngClass]="{'disabled': sellerForm.invalid}">Login</button>
+    </form>
+    <a (click)="changeAuthStratigy()">Create an Account ? - Click Here</a>
+  </div>
+</div>

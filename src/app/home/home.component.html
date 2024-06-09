@@ -1,0 +1,36 @@
+<ngb-carousel class="main-carousel" *ngIf="trendyProducts">
+  <ng-template *ngFor="let product of trendyProducts" ngbSlide>
+    <div [routerLink]="['/details', product.id]" class="wrapper" role="button">
+      <img [src]="product.image" alt="Random first slide">
+    </div>
+    <div class="carousel-caption rounded">
+      <h3>{{product.name}}</h3>
+      <p>{{product.description}}</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4" *ngFor="let product of popularProducts">
+    <div class="card h-100 shadow-sm">
+      <img [src]="product.image" class="card-img-top product-image" alt="{{ product.name }}">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-center fw-bolder text-capitalize">{{ product.name }}</h5>
+        <div class="card-text flex-grow-1 d-flex justify-content-between">
+          <p class="text-center" style="width: 45%; color: #31383F;"> <span class="fw-bold me-1"
+              style="color: #dd8ea4;">Color:</span> {{
+            product.color }}
+          </p>
+          <p class="text-center" style="width: 45%; color: #31383F;"> <span class="fw-bold me-1"
+              style="color: #dd8ea4;">Price:</span> ${{
+            product.price }}
+          </p>
+        </div>
+        <div class="mt-auto">
+          <button [routerLink]="['/details', product.id]" class="btn custom-btn w-100" type="button">View
+            Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

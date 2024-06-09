@@ -1,0 +1,30 @@
+.checkout-container {
+  .section-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .success-message {
+    color: green;
+    text-align: center;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .checkout-container {
+    .row {
+      flex-direction: column;
+    }
+  }
+}

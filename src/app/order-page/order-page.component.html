@@ -1,0 +1,28 @@
+<div class="my-5">
+    <h2 class="mb-4 text-center">My Orders</h2>
+    <ng-container *ngIf="orderData?.length">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Orders</th>
+                    <th class="order-id">Order Id</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Cancel Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orderData">
+                    <td><img src="../../assets/shopping-Cart.png" alt="Cart Icon" class="order-icon rounded"></td>
+                    <td class="order-id">#{{order.id}}</td>
+                    <td>{{order.totalPrice}}</td>
+                    <td>In Progress</td>
+                    <td><button class="btn custom-btn" (click)="cancleOrder(order.id!)">Cancel Order</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+    <ng-container *ngIf="!orderData?.length">
+        <h2 class="no-orders">No Orders To Show</h2>
+    </ng-container>
+</div>

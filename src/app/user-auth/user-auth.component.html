@@ -1,0 +1,30 @@
+<div class="user-auth">
+    <!-- SignUp Page -->
+    <div *ngIf="!wantToLogin" class="main-form">
+        <h2>User Sign-up</h2>
+        <p class="success-message">{{accountCreationMessage}}</p>
+        <form class="common-form" #userForm="ngForm" (ngSubmit)="signUp(userForm.value)">
+            <input type="text" placeholder="Enter Your Name" name="name" ngModel required />
+            <input type="email" placeholder="Enter Your E-mail" name="email" ngModel required />
+            <input type="password" placeholder="Enter Password" name="password" ngModel required minlength="4" />
+            <button type="submit" [ngClass]="{ disabled: userForm.invalid }">
+                Sing Up
+            </button>
+        </form>
+        <a (click)="changeAuthStratigy()">Have an Account ? - Click Here</a>
+    </div>
+
+    <!-- Login Page -->
+    <div *ngIf="wantToLogin" class="main-form">
+        <h2>User Login</h2>
+        <p class="error-message">{{loginErrorMessage}}</p>
+        <form class="common-form" #userForm="ngForm" (ngSubmit)="login(userForm.value)">
+            <input type="email" placeholder="Enter Your E-mail" name="email" ngModel required />
+            <input type="password" placeholder="Enter Password" name="password" ngModel required minlength="4" />
+            <button type="submit" [ngClass]="{ disabled: userForm.invalid }">
+                Login
+            </button>
+        </form>
+        <a (click)="changeAuthStratigy()">Create an Account ? - Click Here</a>
+    </div>
+</div>

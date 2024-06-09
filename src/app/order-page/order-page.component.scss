@@ -1,0 +1,36 @@
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  th,
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.order-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.order-id {
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+  &:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+}
+
+.no-orders {
+  color: #dd8ea4;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+}

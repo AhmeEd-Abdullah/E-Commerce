@@ -1,0 +1,19 @@
+<div class="product-container mx-auto">
+  <ng-container *ngIf="searchResults?.length">
+    <div class="product-row row align-items-center my-3" *ngFor="let product of searchResults">
+      <div [routerLink]="['/details', product.id]" class="col-4" role="button">
+        <img src="{{product.image}}" class="img-fluid product-image" alt="Product Image">
+      </div>
+      <div class="col-8 product-details">
+        <h5 [routerLink]="['/details', product.id]" class="product-name fw-bolder text-capitalize" role="button">{{product.name}}</h5>
+        <p><span><strong>Color:</strong></span> {{product.color}}</p>
+        <p><span><strong>Price:</strong></span> ${{product.price}}</p>
+        <p><span><strong>Category:</strong></span> {{product.category}}</p>
+        <p><span><strong>Description:</strong></span> {{product.description}}</p>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!searchResults?.length">
+    <p class="no-results fw-bolder rounded text-center">No Results To Show</p>
+  </ng-container>
+</div>

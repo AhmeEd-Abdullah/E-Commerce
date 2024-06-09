@@ -1,0 +1,14 @@
+<div class="main-form">
+  <h2>Edit Product</h2>
+  <form class="common-form" #editProductForm="ngForm" (ngSubmit)="editProduct(editProductForm.value)">
+    <input type="text" placeholder="Enter Product Name" name="name" ngModel="{{currentProduct.name}}" required>
+    <input type="text" placeholder="Enter Product Price" name="price" ngModel="{{currentProduct.price}}" required>
+    <input type="text" placeholder="Enter Product Category" name="category" ngModel="{{currentProduct.category}}"
+      required>
+    <input type="text" placeholder="Enter Product Color" name="color" ngModel="{{currentProduct.color}}" required>
+    <textarea placeholder="Enter Product Description" name="description"
+      ngModel="{{currentProduct.description}}"></textarea>
+    <input type="text" placeholder="Enter Product Image Url" name="image" ngModel="{{currentProduct.image}}" required>
+    <button type="submit" [ngClass]="{'disabled': editProductForm.invalid}">Edit Product</button>
+  </form>
+</div>

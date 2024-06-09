@@ -1,0 +1,77 @@
+nav {
+  .container-fluid {
+    @media (max-width: 567px) {
+      padding: 0;
+    }
+    .navbar-brand {
+      font-size: 2rem;
+      a {
+        text-decoration: none;
+        color: #dd8ea4;
+      }
+    }
+  }
+
+  #navbarNav {
+    .main-search {
+      position: relative;
+      .search-results {
+        background-color: #dd8ea5f4;
+        color: white;
+        position: absolute;
+        left: 0;
+        top: 40px;
+        z-index: 100;
+        width: 100%;
+        .product {
+          padding: 10px 15px;
+          margin: 0;
+          cursor: pointer;
+          &:not(:last-child) {
+            border-bottom: 1px solid white;
+          }
+          &:hover {
+            background-color: #c46b8a;
+          }
+        }
+      }
+    }
+  }
+
+  .form-control {
+    margin-right: 10px;
+    padding-left: 15px;
+    border: 1px solid #dd8ea4;
+    border-radius: 5px;
+    &:focus {
+      box-shadow: 0 0 0 0.2rem #f6aac08e;
+    }
+  }
+
+  .navbar-nav .nav-link {
+    color: #dd8ea4;
+    font-size: 18px;
+    &:hover {
+      color: #c46b8a;
+      background-color: rgba(221, 142, 164, 0.1);
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .navbar-toggler {
+      display: none;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .navbar-toggler {
+      display: block;
+      &:focus {
+        border: 3px solid #dd8ea59d !important;
+        box-shadow: none;
+      }
+    }
+  }
+}
